@@ -73,6 +73,10 @@ def validate_pin(pin):
     if pin.isnumeric() and len(pin) in [4, 6]:
         return True
     else:
+
+
+
+
         return False
 
 
@@ -127,3 +131,29 @@ def xo(s):
 price = 49
 txt = f"It is very {'Expensive' if price>50 else 'Cheap'}"
 
+
+
+
+def calculate_average():
+    total_sum = 0
+    count = 0
+
+    while True:
+        try:
+            number = int(input("Enter an integer (0 to stop): "))
+            
+            if number == 0:
+                if count == 0:
+                    print("No numbers were entered.")
+                else:
+                    average = total_sum / count
+                    print(f"The average is: {average:.1f}")
+                break
+            
+            total_sum += number
+            count += 1
+        
+        except ValueError:
+            print("Invalid input. Please enter an integer.")
+
+calculate_average()
