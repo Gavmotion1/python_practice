@@ -157,3 +157,37 @@ def calculate_average():
             print("Invalid input. Please enter an integer.")
 
 calculate_average()
+
+
+
+def divide_numbers(a, b):
+    try:
+        result = a / b
+    except ZeroDivisionError:
+        print("Cannot divide by zero!")
+        return None
+    except TypeError:
+        print("Both inputs must be numbers.")
+        return None
+    else:
+        print("Division successful!")
+        return result
+    finally:
+        print("Execution completed.")
+
+# Test the function
+print(divide_numbers(10, 2))  # This will execute the try, else, and finally blocks
+print(divide_numbers(10, 0))  # This will execute the try, except, and finally blocks
+print(divide_numbers(10, "a"))  # This will execute the try, except, and finally blocks
+
+
+
+def check_age(age):
+    if age < 18:
+        raise ValueError("Age must be at least 18.")
+    print("Age is valid.")
+
+try:
+    check_age(15)
+except ValueError as e:
+    print(f"Error: {e}")

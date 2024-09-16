@@ -1,2 +1,12 @@
-Python 3.12.4 (tags/v3.12.4:8e8a4ba, Jun  6 2024, 19:30:16) [MSC v.1940 64 bit (AMD64)] on win32
-Type "help", "copyright", "credits" or "license()" for more information.
+import sys
+
+try:
+    num1 = float(sys.argv[1])
+    num2 = float(sys.argv[2])
+except (IndexError, ValueError):
+    print("Please provide two valid numbers.")
+    sys.exit(1)
+
+result = num1 + num2
+print(f"The sum of {num1} and {num2} is {result}")
+
